@@ -1,6 +1,8 @@
 <!-- omit in toc -->
 # Conception d'un QRCode version 1
 
+[Tutoriel suivi](https://www.thonky.com/qr-code-tutorial/)
+
 <!-- omit in toc -->
 ## Auteurs
 - François Soulie, ESIEE Paris
@@ -38,8 +40,6 @@
     - [Ajout des infos de format et de version](#ajout-des-infos-de-format-et-de-version)
 - [Conclusion](#conclusion)
   - [Étapes programmées](#étapes-programmées)
-
-[Tutoriel suivi](https://www.thonky.com/qr-code-tutorial/)
 
 # Consigne
 
