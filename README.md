@@ -1,12 +1,19 @@
----
-title: Conception d'un QRCode modèle 1
-author:
-  - François Soulié, ESIEE Paris
-  - Paul Tissedre, ESIEE Paris
-date: 12/28/2020
+<!-- omit in toc -->
+# Conception d'un QRCode version 1
+
 ---
 
-[Tutoriel suivi](https://www.thonky.com/qr-code-tutorial/)
+title: Conception d'un QRCode modèle 1
+author:
+
+- François Soulié, ESIEE Paris
+- Paul Tissedre, ESIEE Paris
+  date: 12/28/2020
+
+---
+
+<!-- omit in toc -->
+## Table des matières
 
 - [Consigne](#consigne)
 - [Coder les données](#coder-les-données)
@@ -37,6 +44,8 @@ date: 12/28/2020
     - [Ajout des infos de format et de version](#ajout-des-infos-de-format-et-de-version)
 - [Conclusion](#conclusion)
   - [Étapes programmées](#étapes-programmées)
+
+[Tutoriel suivi](https://www.thonky.com/qr-code-tutorial/)
 
 # Consigne
 
@@ -356,16 +365,16 @@ Pour choisir le meilleur masque, on attribue des points de pénalité à chaque 
 3. FindP: 40 points pour chaque suite ressemblant aux motifs de localisation.
 4. BalP: 0 points si la proportion de points noirs est entre 45% et 55%, 10 points si elle est entre 40% et 60%, 20 points si elle est entre 25% et 65%, etc.
 
-| Masque | RunP | BoxP | FindP | BalP | Total |
-| :----: | :--: | :--: | :---: | :--: | :---: |
-|   0    | 169  |  99  |  800  |  0   | 1068  |
-|   1    | 178  | 126  |  800  |  0   | 1104  |
-|   2    | 182  | 126  | 1000  |  0   | 1308  |
-|   3    | 184  | 132  |  800  |  0   | 1116  |
-|   4    | 203  | 111  |  840  |  0   | 1154  |
-|   5    | 197  | 159  |  920  |  0   | 1276  |
-|   6    | 209  | 177  |  840  |  0   | 1226  |
-|   7    | 188  | 108  |  800  |  0   | 1096  |
+| Masque | RunP  | BoxP  | FindP | BalP  | Total |
+| :----: | :---: | :---: | :---: | :---: | :---: |
+|   0    |  169  |  99   |  800  |   0   | 1068  |
+|   1    |  178  |  126  |  800  |   0   | 1104  |
+|   2    |  182  |  126  | 1000  |   0   | 1308  |
+|   3    |  184  |  132  |  800  |   0   | 1116  |
+|   4    |  203  |  111  |  840  |   0   | 1154  |
+|   5    |  197  |  159  |  920  |   0   | 1276  |
+|   6    |  209  |  177  |  840  |   0   | 1226  |
+|   7    |  188  |  108  |  800  |   0   | 1096  |
 
 **SOURCE:** https://www.nayuki.io/page/creating-a-qr-code-step-by-step
 
