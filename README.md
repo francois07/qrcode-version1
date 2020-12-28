@@ -1,16 +1,10 @@
 <!-- omit in toc -->
 # Conception d'un QRCode version 1
 
----
-
-title: Conception d'un QRCode modèle 1
-author:
-
-- François Soulié, ESIEE Paris
+<!-- omit in toc -->
+## Auteurs
+- François Soulie, ESIEE Paris
 - Paul Tissedre, ESIEE Paris
-  date: 12/28/2020
-
----
 
 <!-- omit in toc -->
 ## Table des matières
