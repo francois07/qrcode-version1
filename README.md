@@ -422,4 +422,4 @@ Grâce à cette approche un peu algorithmique, nous estimons ainsi avoir compris
 
 | Codage alpha | Remplissage du code | Polynome message | Polynome générateur | Mots de correction | Localisation | Séparateurs | Synchronisation | Données | Infos de format et version | Applications des masques | Choix du masque |
 | :----------: | :-----------------: | :--------------: | :-----------------: | :----------------: | :----------: | :---------: | :-------------: | :-----: | :------------------------: | :----------------------: | :-------------: |
-|      X       |          X          |        X         |                     |                    |      X       |      X      |        X        |    X    |             X              |            X             |                 |
+|      ✓       |          ✓          |        ✓         |                     |                    |      ✓       |      ✓      |        ✓        |    ✓    |             ✓              |            ✓             |                 |
