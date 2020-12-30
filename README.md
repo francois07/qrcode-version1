@@ -20,17 +20,17 @@
   - [Indicateur du nombre de caractères](#indicateur-du-nombre-de-caractères)
   - [Codage du message](#codage-du-message)
   - [Division en mots de longueur 8 et ajout d'octets de remplissage](#division-en-mots-de-longueur-8-et-ajout-doctets-de-remplissage)
-    - [Ajouts de bits de remplissage](#ajouts-de-bits-de-remplissage)
-    - [Ajouts de bits de remplissages supplémentaires](#ajouts-de-bits-de-remplissages-supplémentaires)
-    - [Ajouts de mots de remplissage](#ajouts-de-mots-de-remplissage)
+    - [Ajout de bits de remplissage](#ajout-de-bits-de-remplissage)
+    - [Ajout de bits de remplissages supplémentaires](#ajout-de-bits-de-remplissages-supplémentaires)
+    - [Ajout de mots de remplissage](#ajout-de-mots-de-remplissage)
 - [Coder la correction d'erreur](#coder-la-correction-derreur)
   - [Polynome message](#polynome-message)
   - [Polynome générateur](#polynome-générateur)
   - [Détermination des mots de corrections](#détermination-des-mots-de-corrections)
 - [Dessiner le QRCode](#dessiner-le-qrcode)
-  - [Ajouts des motifs de localisation](#ajouts-des-motifs-de-localisation)
-  - [Ajouts des séparateurs](#ajouts-des-séparateurs)
-  - [Ajouts des motifs de synchronisation](#ajouts-des-motifs-de-synchronisation)
+  - [Ajout des motifs de localisation](#ajout-des-motifs-de-localisation)
+  - [Ajout des séparateurs](#ajout-des-séparateurs)
+  - [Ajout des motifs de synchronisation](#ajout-des-motifs-de-synchronisation)
   - [Zones réservées et module noir](#zones-réservées-et-module-noir)
   - [Placement des données](#placement-des-données)
     - [Résultat](#résultat)
@@ -69,7 +69,7 @@ Notre message est alphanumérique, donc l'indicateur de mode est `0010`.
 
 ## Indicateur du nombre de caractères
 
-Notre message a 14 caractères : `1110` en binaire. On a choisit la version 1 pour notre QRCode ; cette version requiert un indicateur du nombre de caractères de longueur 9, donc on décale notre résultat précédent de 5 bits. On obtient `000001110`.
+Notre message a 14 caractères : `1110` en binaire. On a choisi la version 1 pour notre QRCode ; cette version requiert un indicateur du nombre de caractères de longueur 9, donc on décale notre résultat précédent de 5 bits. On obtient `000001110`.
 
 **SOURCE:** https://www.thonky.com/qr-code-tutorial/data-encoding#step-4-add-the-character-count-indicator
 
@@ -96,7 +96,7 @@ def alphanumeric_encode(msg):
 
 Ce programme affiche `1111101000 10100101010 10011111001 1101000110 1000110111 1010010011 1010010010`
 
-On ajoute à cette suite nos indicateur de mode et du nombre de caractères : `0010` `000001110` `1111101000 10100101010 10011111001 1101000110 1000110111 1010010011 1010010010`
+On ajoute à cette suite nos indicateurs de mode et du nombre de caractères : `0010` `000001110` `1111101000 10100101010 10011111001 1101000110 1000110111 1010010011 1010010010`
 
 ## Division en mots de longueur 8 et ajout d'octets de remplissage
 
@@ -104,17 +104,17 @@ Pour un QRCode de version 1 avec un niveau de correction L, on a besoin de 19 mo
 
 **SOURCE:** https://www.thonky.com/qr-code-tutorial/error-correction-table
 
-### Ajouts de bits de remplissage
+### Ajout de bits de remplissage
 
 On ajoute 4 0s à la fin de notre code : `0010` `000001110` `1111101000 10100101010 10011111001 1101000110 1000110111 1010010011 1010010010` `0000`
 
 **SOURCE:** https://www.thonky.com/qr-code-tutorial/data-encoding#add-a-terminator-of-0s-if-necessary
 
-### Ajouts de bits de remplissages supplémentaires
+### Ajout de bits de remplissages supplémentaires
 
 Pour avoir une taille multiple de 8, on ajoute des 0s supplémentaires à la fin de notre code.
 
-### Ajouts de mots de remplissage
+### Ajout de mots de remplissage
 
 Tant que notre code n'a pas pour longueur 152 bits, on ajoute les mots suivants à la fin de ce dernier: `11101100 00010001`.
 
@@ -164,7 +164,7 @@ def msg_coeffs(msg, mode, max):
     return ",".join(coeffs)
 ```
 
-Ce programme affiche `32,115,232,165,83,229,163,35,117,38,164,128,236,17,236,17,236,17,236`, qui sont les coefficients du polynome message.
+Ce programme affiche `32, 115, 232, 165, 83, 229, 163, 35, 117, 38, 164, 128, 236, 17, 236, 17, 236, 17, 236`, qui sont les coefficients du polynome message.
 
 Ensuite, pour afficher ce polynome avec ses coefficients, on a écrit le programme suivant
 
@@ -196,9 +196,9 @@ Les mots de corrections sont ainsi `211, 212, 181, 2, 31, 139, 106`
 
 # Dessiner le QRCode
 
-On a choisit un QRCode de version 1. La taille d'un QRCode a pour formule `S = (((<VERSION>-1)*4)+21)` donc le notre aura pour taille `21*21`.
+On a choisi un QRCode de version 1. La taille d'un QRCode a pour formule `S = (((<VERSION>-1)*4)+21)` donc le notre aura pour taille `21*21`.
 
-## Ajouts des motifs de localisation
+## Ajout des motifs de localisation
 
 On ajoute en premier lieu les motifs de localisation à notre QRCode, dans les coins nord-ouest, nord-est et sud-ouest ; c'est-à-dire aux positions `(0,0), (14,0), (0,14)`
 
@@ -215,13 +215,13 @@ def draw_pattern(qrcode, x, y):
 
 ![localisation](images/localisation.png)
 
-## Ajouts des séparateurs
+## Ajout des séparateurs
 
 On ajoute des séparateurs à notre QRCode, qui sont en fait des zones de taille 1 pixel dans lesquels nous ne reseignerons aucune donnée.
 
 ![separateurs](images/separateurs.png)
 
-## Ajouts des motifs de synchronisation
+## Ajout des motifs de synchronisation
 
 ```py
 def draw_timing(qrcode):
@@ -313,7 +313,7 @@ On y est presque !
 
 Nous allons maintenant appliquer un masque à notre QRCode, afin de faciliter la lecture de ce dernier. Un masque est en fait une proposition que nous évaluons sur chaque pixel de notre QRCode et si ce dernier vérifie la proposition, alors on inverse sa valeur. Il existe 7 types de masque et donc 7 propositions.
 
-```
+```py
 def apply_mask(bit, mask, row, column):
     if mask == -1:
         return bit
