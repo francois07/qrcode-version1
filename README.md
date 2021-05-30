@@ -4,11 +4,6 @@
 [Tutoriel suivi](https://www.thonky.com/qr-code-tutorial/)
 
 <!-- omit in toc -->
-## Auteurs
-- François Soulie, ESIEE Paris
-- Paul Tissedre, ESIEE Paris
-
-<!-- omit in toc -->
 ## Table des matières
 
 - [Consigne](#consigne)
